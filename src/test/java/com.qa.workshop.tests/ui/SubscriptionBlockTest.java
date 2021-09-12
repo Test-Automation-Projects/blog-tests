@@ -17,4 +17,14 @@ public class SubscriptionBlockTest extends BaseUITest {
                 .shouldBe(Condition.visible)
                 .shouldHave(Condition.exactTextCaseSensitive("Yeah!You’ve successfully\nsubscribed to a newsletter"));
     }
+
+    @Test
+    public void userCanSwitchToggleOnBlog() {
+
+        new BlogPage()
+                .open()
+                .getSubscriptionBlock()
+                .switchToggle()
+                .checkColor();
+    }
 }
